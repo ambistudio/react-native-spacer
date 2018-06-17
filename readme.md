@@ -5,7 +5,7 @@ A view wrapper that avoiding keyboard when it displayed
 
 [See demo on Expo Snack](https://snack.expo.io/rk3f3lNZQ)
  
-![react-native-spacer demo](https://media.giphy.com/media/1rLwVHQufUoFzxyNeT/giphy.gif "Demo")
+![react-native-spacer demo](https://media.giphy.com/media/1rLwVHQufUoFzxyNeT/giphy.gif)
 
 
 ## I. Installation 

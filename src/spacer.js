@@ -72,9 +72,8 @@ export default class Spacer extends React.PureComponent {
     };
 
     render() {
-        let { style, children } = this.props;
+        let { style } = this.props;
         delete this.props.style;
-        delete this.props.children;
 
         return <Animated.View
             ref={ref => this._container = ref}
@@ -84,7 +83,7 @@ export default class Spacer extends React.PureComponent {
             }]}
             collapsable={false}
             {...this.props}
-        >{children}</Animated.View>;
+        ></Animated.View>;
     }
 }
 
@@ -93,6 +92,7 @@ Spacer.propsTypes = {
     // A distance of component above the keyboard when it has shown
     spaceMargin: PropTypes.number,
 
+    // Enable/disable spacing (for minimize animation to improve performance)
     enabled: PropTypes.bool
 }
 
