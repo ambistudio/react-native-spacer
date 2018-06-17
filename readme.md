@@ -1,7 +1,12 @@
 # React Native Spacer
 A view wrapper that avoiding keyboard when it displayed
 
+## Demo
+
 [See demo on Expo Snack](https://snack.expo.io/rk3f3lNZQ)
+ 
+![react-native-spacer demo](https://media.giphy.com/media/1rLwVHQufUoFzxyNeT/giphy.gif "Demo")
+
 
 ## I. Installation 
 ```ssh
@@ -31,6 +36,10 @@ __2. Wrap component into Spacer__
 
 | Property Name | Type     | Default Value | Definition | 
 | ------------- | -------- | ------------- |----------- |
-| spaceMargin   |  number  | 10            | A distance of component above thekeyboard when it has shown |
+| spaceMargin   |  number  | 10            | A distance of component above the keyboard when it displayed |
 
 Feel free to have any question, file an issue, or contributing to the module.
+
+## IV. Todo
+
+- Create tests
