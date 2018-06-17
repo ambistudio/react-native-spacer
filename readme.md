@@ -1,6 +1,9 @@
 # React Native Spacer
 A view wrapper that avoiding keyboard when it displayed
 
+
+[See demo on Expo Snack](https://snack.expo.io/rk3f3lNZQ)
+
 ## I. Installation 
 ```ssh
 npm install --save react-native-spacer
