@@ -1,7 +1,7 @@
 {
   "name": "react-native-spacer",
   "keywords": [],
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "A view wrapper that avoiding keyboard when it displayed",
   "main": "index.js",
   "scripts": {

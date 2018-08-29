@@ -1,5 +1,8 @@
 # React Native Spacer
-A view wrapper that avoiding keyboard when it displayed
+
+A view wrapper that will float above the keyboard when it displayed. Technically, it used Animated.View and will animate a `translateY` value to avoid the keyboard.
+
+It is highly recommended to use `KeyboardAvodingView`. But in some rare case when `KeyboardAvodingView` not working, try this `Spacer`. 
 
 ## Demo
 
