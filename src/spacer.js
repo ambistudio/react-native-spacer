@@ -38,16 +38,24 @@ export default class Spacer extends React.PureComponent {
     _keyboardWillShow = ev => {
         
         if (this.props.enabled) {
-            // Calculation new position above the keyboard
-            let toValue = (this._locationY + this._viewHeight) - (windowHeight - (ev.endCoordinates.height + this._spaceMargin));
-            this._animate(-1 *toValue).start();
+            if (this._container) {
+                this._container._component.measureInWindow(( x, y, w, h ) => {
+                    // Calculation new position above the keyboard
+                    let toValue = (y + h) - (windowHeight - (ev.endCoordinates.height + this._spaceMargin));
+                    this._animate(-1 *toValue).start();
+                })
+            } else {
+                // Calculation new position above the keyboard
+                let toValue = (this._locationY + this._viewHeight) - (windowHeight - (ev.endCoordinates.height + this._spaceMargin));
+                this._animate(-1 *toValue).start();
+            }
         }
     };
 
-    _animate = (toValue, duration = 150) => {
+    _animate = (toValue, duration = 300) => {
 
         // Short hand for animating view
-        return Animated.spring(this._topValue, {
+        return Animated.timing(this._topValue, {
             toValue,
             duration,
         });
@@ -72,18 +80,18 @@ export default class Spacer extends React.PureComponent {
     };
 
     render() {
-        let { style } = this.props;
-        delete this.props.style;
+        let { style, ref, children, backgroundColor, ...rest } = this.props;
 
         return <Animated.View
             ref={ref => this._container = ref}
             onLayout={this._setLayoutProps}
             style={[style, {
-                transform: [{ translateY: this._topValue }]
+                transform: [{ translateY: this._topValue }],
+                backgroundColor
             }]}
             collapsable={false}
-            {...this.props}
-        ></Animated.View>;
+            {...rest}
+        >{children}</Animated.View>;
     }
 }
 
@@ -92,11 +100,11 @@ Spacer.propsTypes = {
     // A distance of component above the keyboard when it has shown
     spaceMargin: PropTypes.number,
 
-    // Enable/disable spacing (for minimize animation to improve performance)
     enabled: PropTypes.bool
 }
 
 Spacer.defaultProps = {
-    spaceMargin: 10,
-    enabled: true
+    spaceMargin: 0,
+    enabled: true,
+    backgroundColor: '#fffffff7'
 }
