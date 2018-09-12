@@ -41,7 +41,7 @@ __2. Wrap component into Spacer__
 
 | Property Name | Type     | Default Value | Definition | 
 | ------------- | -------- | ------------- |----------- |
-| spaceMargin   | number   | 10            | Component's margin above the keyboard when it displayed |
+| spaceMargin   | number   | 0            | Component's margin above the keyboard when it displayed |
 | enabled       | bool     | true          | Set to `false` to disable Spacer
 | backgroundColor | string | #fffffff7 | Spacer component background color
 
