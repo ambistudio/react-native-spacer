@@ -8,7 +8,9 @@ It is highly recommended to use `KeyboardAvodingView`. But in some rare case whe
 ## Demo
 
 [See demo on Expo Snack](https://snack.expo.io/@hieunc/react-native-spacer)
- 
+
+
+[View gif demo](https://media.giphy.com/media/1rLwVHQufUoFzxyNeT/giphy.gif)
 <img src="https://media.giphy.com/media/1rLwVHQufUoFzxyNeT/giphy.gif">
 
 ## I. Installation 
