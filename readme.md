@@ -1,4 +1,5 @@
 # React Native Spacer
+[![npm version](https://badge.fury.io/js/react-native-spacer.svg)](https://badge.fury.io/js/react-native-spacer)
 
 A view wrapper that will float above the keyboard when it displayed. Technically, it use Animated.View and will animate a `translateY` value to avoid the keyboard.
 
@@ -6,10 +7,9 @@ It is highly recommended to use `KeyboardAvodingView`. But in some rare case whe
 
 ## Demo
 
-[See demo on Expo Snack](https://snack.expo.io/rk3f3lNZQ)
+[See demo on Expo Snack](https://snack.expo.io/@hieunc/react-native-spacer)
  
-![react-native-spacer demo](https://media.giphy.com/media/1rLwVHQufUoFzxyNeT/giphy.gif)
-
+<img src="https://media.giphy.com/media/1rLwVHQufUoFzxyNeT/giphy.gif">
 
 ## I. Installation 
 ```ssh
@@ -39,7 +39,9 @@ __2. Wrap component into Spacer__
 
 | Property Name | Type     | Default Value | Definition | 
 | ------------- | -------- | ------------- |----------- |
-| spaceMargin   |  number  | 10            | A distance of component above the keyboard when it displayed |
+| spaceMargin   | number   | 10            | Component's margin above the keyboard when it displayed |
+| enabled       | bool     | true          | Set to `false` to disable Spacer
+| backgroundColor | string | #fffffff7 | Spacer component background color
 
 Feel free to have any question, file an issue, or contributing to the module.
 
