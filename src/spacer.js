@@ -2,8 +2,6 @@ import React from 'react';
 import { Keyboard, Animated, Dimensions, Platform } from 'react-native';
 import PropTypes from 'prop-types';
 
-const windowHeight = Dimensions.get('window').height;
-
 /**
  * react-native-spacer https://snack.expo.io/@hieunc/react-native-spacer
  * - Spacer is used to dynamically positioning its child component when keyboard is toggled.
@@ -14,6 +12,12 @@ const windowHeight = Dimensions.get('window').height;
     <ChildComponent ... />
   </Spacer>
  */
+const windowHeight = Dimensions.get('window').height;
+const showListenerEvent =
+    Platform.OS === 'android' ? 'keyboardDidShow' : 'keyboardWillShow';
+const hideListenerEvent =
+    Platform.OS === 'android' ? 'keyboardDidHide' : 'keyboardWillHide';
+
 export default class Spacer extends React.PureComponent {
     _topValue = new Animated.Value(0);
     _viewHeight = 0;
@@ -22,15 +26,15 @@ export default class Spacer extends React.PureComponent {
 
     componentDidMount() {
 
-        const showListenerEvent =
-            Platform.OS === 'android' ? 'keyboardDidShow' : 'keyboardWillShow';
-        const hideListenerEvent =
-            Platform.OS === 'android' ? 'keyboardDidHide' : 'keyboardWillHide';
-
         Keyboard.addListener(showListenerEvent, this._keyboardWillShow);
         Keyboard.addListener(hideListenerEvent, this._keyboardWillHide);
 
         this._spaceMargin = this.props.spaceMargin;
+    }
+
+    componentWillUnmount() {
+        Keyboard.removeListener(showListenerEvent, this._keyboardWillShow);
+        Keyboard.removeListener(hideListenerEvent, this._keyboardWillHide);
     }
 
     _keyboardWillHide = () => {
@@ -40,9 +44,12 @@ export default class Spacer extends React.PureComponent {
         }
     };
 
-    _keyboardWillShow = ev => {
+    _keyboardWillShow = (ev) => {
 
         if (this.props.enabled) {
+            
+            // In some cases, this._container return null
+            // This step make sure this._container is not null in order to use measureInWindow
             if (this._container) {
                 this._container._component.measureInWindow((x, y, w, h) => {
                     // Calculation new position above the keyboard
