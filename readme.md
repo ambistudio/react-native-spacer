@@ -1,9 +1,9 @@
 # React Native Spacer
 [![npm version](https://badge.fury.io/js/react-native-spacer.svg)](https://badge.fury.io/js/react-native-spacer)
 
-A view wrapper that will float above the keyboard when it displayed. Technically, it use Animated.View and will animate a `translateY` value to avoid the keyboard.
+A view wrapper that will float above the keyboard when it displayed. Technically, it uses Animated.View and will animate a `translateY` value to avoid the keyboard.
 
-It is highly recommended to use `KeyboardAvodingView`. But in some rare case when `KeyboardAvodingView` not working, try this `Spacer`. 
+`KeyboardAvodingView` is highly recommended. But in some rare case when `KeyboardAvodingView` not working, try this `Spacer`. 
 
 ## Demo
 
@@ -11,7 +11,9 @@ It is highly recommended to use `KeyboardAvodingView`. But in some rare case whe
 
 
 [View gif demo](https://media.giphy.com/media/1rLwVHQufUoFzxyNeT/giphy.gif)
+
 <img src="https://media.giphy.com/media/1rLwVHQufUoFzxyNeT/giphy.gif">
+
 
 ## I. Installation 
 ```ssh
@@ -20,7 +22,7 @@ npm install --save react-native-spacer
 
 ## II. How to use
 
-Class `Spacer` is a wraper using Animated.View. For usage, see official documentation [Animated](https://facebook.github.io/react-native/docs/animated.html) and [View](https://facebook.github.io/react-native/docs/view.html)
+Class `Spacer` is a wrapper using Animated.View. For usage, see official documentation [Animated](https://facebook.github.io/react-native/docs/animated.html) and [View](https://facebook.github.io/react-native/docs/view.html)
 
 __1. Import library__
 
@@ -33,7 +35,7 @@ __2. Wrap component into Spacer__
 ```javascript
 
 <Spacer spaceMargin={20}>
-    {/* Components that float when keyboard is showing */}
+    {/* Components that need to float when keyboard showing */}
 </Spacer>
 ```
 
