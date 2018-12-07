@@ -4,11 +4,16 @@
     <a href="https://www.npmjs.com/package/react-native-spacer" target="_blank" />
         <img src="https://badge.fury.io/js/react-native-spacer.svg" alt="NPM badge" />
     </a>
+    <a href="https://github.com/ambistudio/react-native-spacer/blob/master/LICENSE" target="_blank" />
+        <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="NPM badge" />
+    </a>
 </p>
 
-A view wrapper that will float above the keyboard when it displayed. Technically, it uses Animated.View and will animate a `translateY` value to avoid the keyboard.
+<h3 align="center">
+    <b>A view wrapper that will float above the keyboard when it displayed</b>
+</h3>
 
-`KeyboardAvodingView` is highly recommended. But in some rare case when `KeyboardAvodingView` not working, try this `Spacer`. 
+Technically, it uses Animated.View and will animate a `translateY` value to avoid the keyboard. `KeyboardAvodingView` is highly recommended. But in some rare case when `KeyboardAvodingView` not working, try this `Spacer`. 
 
 ## Demo
 
