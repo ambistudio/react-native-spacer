@@ -1,5 +1,10 @@
-# React Native Spacer
-[![npm version](https://badge.fury.io/js/react-native-spacer.svg)](https://badge.fury.io/js/react-native-spacer)
+
+<h1 align="center">React Native Spacer</h1>
+<p align="center">
+    <a href="https://www.npmjs.com/package/react-native-spacer" target="_blank" />
+        <img src="https://badge.fury.io/js/react-native-spacer.svg" alt="NPM badge" />
+    </a>
+</p>
 
 A view wrapper that will float above the keyboard when it displayed. Technically, it uses Animated.View and will animate a `translateY` value to avoid the keyboard.
 
@@ -12,8 +17,7 @@ A view wrapper that will float above the keyboard when it displayed. Technically
 
 [View gif demo](https://media.giphy.com/media/1rLwVHQufUoFzxyNeT/giphy.gif)
 
-<img src="https://media.giphy.com/media/1rLwVHQufUoFzxyNeT/giphy.gif">
-
+![](https://media.giphy.com/media/1rLwVHQufUoFzxyNeT/giphy.gif)
 
 ## I. Installation 
 ```ssh
