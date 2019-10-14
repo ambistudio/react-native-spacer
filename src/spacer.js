@@ -30,6 +30,7 @@ export default class Spacer extends React.PureComponent {
         Keyboard.addListener(hideListenerEvent, this._keyboardWillHide);
 
         this._spaceMargin = this.props.spaceMargin;
+        this._isActive = false
     }
 
     componentWillUnmount() {
@@ -38,7 +39,8 @@ export default class Spacer extends React.PureComponent {
     }
 
     _keyboardWillHide = () => {
-        if (this.props.enabled) {
+        if (this.props.enabled && this._isActive) {
+            this._isActive = false;
             // Move view back to the initiated position
             this._animate(0).start();
         }
@@ -46,8 +48,9 @@ export default class Spacer extends React.PureComponent {
 
     _keyboardWillShow = (ev) => {
 
-        if (this.props.enabled) {
-            
+        if (this.props.enabled && !this._isActive) {
+            this._isActive = true;
+
             // In some cases, this._container return null
             // This step make sure this._container is not null in order to use measureInWindow
             if (this._container) {
