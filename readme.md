@@ -19,10 +19,7 @@ Technically, it uses Animated.View and will animate a `translateY` value to avoi
 
 [See demo on Expo Snack](https://snack.expo.io/@hieunc/react-native-spacer)
 
-
-[View gif demo](https://media.giphy.com/media/1rLwVHQufUoFzxyNeT/giphy.gif)
-
-![](https://media.giphy.com/media/1rLwVHQufUoFzxyNeT/giphy.gif)
+<img src="https://i.giphy.com/media/PhCDE18p1uMekZC6CX/giphy.gif" alt="Demo" title="Demo" />
 
 ## I. Installation 
 ```ssh
