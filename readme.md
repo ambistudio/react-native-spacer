@@ -52,6 +52,7 @@ __2. Wrap component into Spacer__
 | spaceMargin   | number   | 0            | Component's margin above the keyboard when it displayed |
 | enabled       | bool     | true          | Set to `false` to disable Spacer
 | backgroundColor | string | #fffffff7 | Spacer component background color
+| animationDuration | number | 300 | Duration of the view animation
 
 Feel free to have any question, file an issue, or contributing to the module.
 

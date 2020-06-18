@@ -42,7 +42,7 @@ export default class Spacer extends React.PureComponent {
         if (this.props.enabled && this._isActive) {
             this._isActive = false;
             // Move view back to the initiated position
-            this._animate(0).start();
+            this._animate(0, this.props.animationDuration).start();
         }
     };
 
@@ -57,17 +57,17 @@ export default class Spacer extends React.PureComponent {
                 this._container._component.measureInWindow((x, y, w, h) => {
                     // Calculation new position above the keyboard
                     let toValue = (y + h) - (windowHeight - (ev.endCoordinates.height + this._spaceMargin));
-                    this._animate(-1 * toValue).start();
+                    this._animate(-1 * toValue, this.props.animationDuration).start();
                 })
             } else {
                 // Calculation new position above the keyboard
                 let toValue = (this._locationY + this._viewHeight) - (windowHeight - (ev.endCoordinates.height + this._spaceMargin));
-                this._animate(-1 * toValue).start();
+                this._animate(-1 * toValue, this.props.animationDuration).start();
             }
         }
     };
 
-    _animate = (toValue, duration = 300) => {
+    _animate = (toValue, duration) => {
 
         // Short hand for animating view
         return Animated.timing(this._topValue, {
@@ -114,11 +114,13 @@ Spacer.propsTypes = {
     // A distance of component above the keyboard when it has shown
     spaceMargin: PropTypes.number,
     enabled: PropTypes.bool,
-    backgroundColor: PropTypes.string
+    backgroundColor: PropTypes.string,
+    animationDuration: PropTypes.number
 }
 
 Spacer.defaultProps = {
     spaceMargin: 0,
     enabled: true,
-    backgroundColor: '#fffffff7'
+    backgroundColor: '#fffffff7',
+    animationDuration: 300
 }
