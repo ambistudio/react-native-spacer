@@ -38,6 +38,14 @@ export default class Spacer extends React.PureComponent {
         Keyboard.removeListener(hideListenerEvent, this._keyboardWillHide);
     }
 
+    _getContainer() {
+      // calling getNode on the ref is no longer necessary in the future
+      // https://github.com/react-navigation/react-native-safe-area-view/issues/111
+      return this._container.measureInWindow
+          ? this._container
+          : this._container.getNode();
+    }
+
     _keyboardWillHide = () => {
         if (this.props.enabled && this._isActive) {
             this._isActive = false;
@@ -54,7 +62,7 @@ export default class Spacer extends React.PureComponent {
             // In some cases, this._container return null
             // This step make sure this._container is not null in order to use measureInWindow
             if (this._container) {
-                this._container._component.measureInWindow((x, y, w, h) => {
+                this._getContainer().measureInWindow((x, y, w, h) => {
                     // Calculation new position above the keyboard
                     let toValue = (y + h) - (windowHeight - (ev.endCoordinates.height + this._spaceMargin));
                     this._animate(-1 * toValue, this.props.animationDuration).start();
@@ -73,6 +81,7 @@ export default class Spacer extends React.PureComponent {
         return Animated.timing(this._topValue, {
             toValue,
             duration,
+            useNativeDriver: false
         });
     };
 
@@ -86,8 +95,7 @@ export default class Spacer extends React.PureComponent {
         if (y = ev.nativeEvent.layout.y) {
             this._locationY = y
         } else {
-            this._container
-                ._component
+            this._getContainer()
                 .measureInWindow((x, y, width, height) => {
                     this._locationY = y;
                 })
