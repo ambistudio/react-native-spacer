@@ -59,3 +59,7 @@ Feel free to have any question, file an issue, or contributing to the module.
 ## IV. Todo
 
 - Create tests
+
+## V. Changes
+
+- v1.7.0: Fix `measureInWindow` not found for latest RN version (thanks @kristerkari)
